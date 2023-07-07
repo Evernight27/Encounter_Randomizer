@@ -1,8 +1,7 @@
 #center {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  align-content: flex-start;
+  margin: auto;
+  width: 50%;
+  padding: 15px;
   background-image: url('https://img.freepik.com/free-photo/brown-papyrus-paper_53876-14519.jpg?w=996&t=st=1675679957~exp=1675680557~hmac=75bb08eac97affb72a085f4943b6ddac5e9527803746f39aadb86cd29731ae35');
 }
 
@@ -13,4 +12,5 @@ body {
 
 #partyList {
   background-image: url('https://img.freepik.com/free-photo/brown-papyrus-paper_53876-14519.jpg?w=996&t=st=1675679957~exp=1675680557~hmac=75bb08eac97affb72a085f4943b6ddac5e9527803746f39aadb86cd29731ae35');
+  width: 20%;
 }
