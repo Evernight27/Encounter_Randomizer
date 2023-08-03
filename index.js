@@ -61,7 +61,7 @@ generate.addEventListener('click', async () => {
     const immunities = monster.damage_immunities ? `<h4 class="sameline">Damage Immunities: </h4><p class="sameline">${monster.damage_immunities}</p><br />` : '';
 
     const monsterAbilities = monster.special_abilities;
-    const specialAbilities = monsterAbilities.map((ability) => `<h4 class="sameline specialAbilities">${ability.name}: </h4><p class="sameline">${ability.desc}</p><br />`).join(' ');
+    const specialAbilities = (monsterAbilities === undefined || monsterAbilities.length === 0) ? '' : monsterAbilities.map((ability) => `<h4 class="sameline specialAbilities">${ability.name}: </h4><p class="sameline">${ability.desc}</p><br />`).join(' ');
 
     encounter.innerHTML = `
     <div class="monsterBlock">
