@@ -1,24 +1,31 @@
-#center {
-  margin: 1em auto;
-  display: flexbox;
-  width: 40%;
-  padding: 15px;
-  background-image: url('assets/papyrus.jpg');
-  border-radius: 8px;
+@font-face {
+  font-family: "Bookinsanity";
+  src: url("assets/fonts/Bookinsanity.woff2") format('woff');
+}
+
+@font-face {
+  font-family: "Bookinsanity";
+  src: url("assets/fonts/Bookinsanity\ Bold.woff2") format('woff');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Bookinsanity";
+  src: url("assets/fonts/Bookinsanity\ Bold\ Italic.woff2") format('woff');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Bookinsanity";
+  src: url("assets/fonts/Bookinsanity\ Italic.woff2") format('woff');
+  font-style: italic;
 }
 
 body {
-  background-image: url("assets/campfire.jpg");
-  background-size: 100vw 100vh;
-}
-
-#partyList {
-  margin: 1em auto;
-  display: flexbox;
-  width: 40%;
-  background-image: url('assets/papyrus.jpg');
-  border-radius: 8px;
-  padding: 15px;
+  background: url("assets/campfire.jpg") no-repeat center center fixed;
+  background-size: cover;
+  font-family: "Bookinsanity";
 }
 
 button {
@@ -27,6 +34,7 @@ button {
   letter-spacing: 2px;
   font-weight: bold;
   text-transform: uppercase;
+  color: black;
   border: 2px solid #77490c;
   border-radius: 6px;
   background-color: #b67908;
@@ -35,6 +43,68 @@ button {
   cursor: pointer;
 }
 
+h2, h3, h4 {
+  color: #58180d;
+}
+
+hr {
+  visibility: visible;
+  height: 6px;
+  margin: .12cm 0;
+  background-image: url('/assets/redTriangle.png');
+  background-size: 100% 100%;
+  border: none;
+}
+
+table {
+  column-span: none;
+  color: #58180d;
+  background-color: transparent;
+  border-style: none;
+  border-image: none;
+  padding: .2em;
+
+}
+
+th {
+  padding: 0 .5em;
+}
+
+#center {
+  margin: 1em auto;
+  display: flexbox;
+  width: 40%;
+  padding: 15px;
+  background-image: url('assets/parchment.jpg');
+  border-radius: 8px;
+}
+
+#partyList {
+  margin: 1em auto;
+  display: flexbox;
+  width: 40%;
+  background-image: url('assets/parchment.jpg');
+  border-radius: 8px;
+  padding: 15px;
+}
+
 .sameline {
   display: inline;
+}
+
+.specialAbilities {
+  color: black;
+}
+
+.monsterBlock {
+  border-style: solid;
+  border-width: 7px 6px;
+  background-color: #f2e5b5;
+  background-image: url('/assets/parchmentBackgroundGrayscale.jpg');
+  border-image: url('/assets/monsterBorderFancy.png') 14 round;
+  border-image-outset: 0;
+  border-image-outset: 0px 2px;
+  background-blend-mode: overlay;
+  box-shadow: 1px 4px 14px #888;
+  padding: 4px 2px;
 }

@@ -53,20 +53,58 @@ generate.addEventListener('click', async () => {
   } else {
     const monsters = await getCR(CR.innerHTML);
     const monster = await randomMon(monsters);
+
+    const ac = monster.armor_desc ? `<h3 class="sameline">Armor Class: </h3><p class="sameline">${monster.armor_class} (${monster.armor_desc})</p><br />` : `<h3 class="sameline">Armor Class: </h3><p class="sameline">${monster.armor_class}</p><br />`;
+    const monsterType = monster.alignment ? `${monster.size} ${monster.type}, ${monster.alignment}` : `${monster.size} ${monster.type}`;
+    const vulnerabilities = monster.damage_vulnerabilities ? `<h4 class="sameline">Damage Vulnerabilities: </h4><p class="sameline">${monster.damage_vulnerabilities}</p><br />` : '';
+    const resistances = monster.damage_resistances ? `<h4 class="sameline">Damage Resistances: </h4><p class="sameline">${monster.damage_resistances}</p><br />` : '';
+    const immunities = monster.damage_immunities ? `<h4 class="sameline">Damage Immunities: </h4><p class="sameline">${monster.damage_immunities}</p><br />` : '';
+
+    const monsterAbilities = monster.special_abilities;
+    const specialAbilities = monsterAbilities.map((ability) => `<h4 class="sameline specialAbilities">${ability.name}: </h4><p class="sameline">${ability.desc}</p><br />`).join(' ');
+
     encounter.innerHTML = `
-    <h2 class="sameline">Monster: </h2><p class="sameline">${monster.name}</p><br />
-    <h3 class="sameline">Stats: </h3><p class="sameline">
-    ${monster.strength} Str,
-    ${monster.dexterity} Dex,
-    ${monster.constitution} Con,
-    ${monster.intelligence} Int,
-    ${monster.wisdom} Wis,
-    ${monster.charisma} Cha</p><br />
-    <h3 class="sameline">HP: </h3><p class="sameline">${monster.hit_points}</p><br />
-    <h3 class="sameline">AC: </h3><p class="sameline">${monster.armor_class}</p><br />
-    <h3 class="sameline">Size: </h3><p class="sameline">${monster.size}</p><br />
-    <h3 class="sameline">Type: </h3><p class="sameline">${monster.type}</p><br />
-    <h3 class="sameline">Alignment: </h3><p class="sameline">${monster.alignment}</p><br />
-    <h3 class="sameline">Armor Type: </h3><p class="sameline">${monster.armor_desc || 'N/A'}</p><br />`;
+    <div class="monsterBlock">
+    <h2 class="sameline">${monster.name}</h2>
+    <br />
+    <em property="italic class="sameline">${monsterType}</em><br />
+    <hr />
+    ${ac}
+    <h3 class="sameline">Hit Points: </h3><p class="sameline">${monster.hit_points}</p><br />
+    <h3 class="sameline">Speed: </h3><p class="sameline">${monster.speed.walk} ft.</p><br />
+    <hr />
+    <div style="overflow-x: auto;">
+      <table>
+        <thead>
+          <tr>
+            <th align="center">STR</th>
+            <th align="center">DEX</th>
+            <th align="center">CON</th>
+            <th align="center">INT</th>
+            <th align="center">WIS</th>
+            <th align="center">CHA</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td align="center">${monster.strength}</td>
+            <td align="center">${monster.dexterity}</td>
+            <td align="center">${monster.constitution}</td>
+            <td align="center">${monster.intelligence}</td>
+            <td align="center">${monster.wisdom}</td>
+            <td align="center">${monster.charisma}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <hr />
+    ${vulnerabilities}
+    ${resistances}
+    ${immunities}
+    <h4 class="sameline" >Senses: </h4 ><p class="sameline">${monster.senses}</p><br />
+    <h4 class="sameline" >Languages: </h4 ><p class="sameline">${monster.languages || '---'}</p><br />
+    <hr />
+    ${specialAbilities}
+    </div>`;
   }
 });
