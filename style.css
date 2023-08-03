@@ -1,16 +1,40 @@
 #center {
-  margin: auto;
-  width: 50%;
+  margin: 1em auto;
+  display: flexbox;
+  width: 40%;
   padding: 15px;
-  background-image: url('https://img.freepik.com/free-photo/brown-papyrus-paper_53876-14519.jpg?w=996&t=st=1675679957~exp=1675680557~hmac=75bb08eac97affb72a085f4943b6ddac5e9527803746f39aadb86cd29731ae35');
+  background-image: url('assets/papyrus.jpg');
+  border-radius: 8px;
 }
 
 body {
-  background-image: url("https://picstatio.com/u/4e61f7/campfire-the-survial-game.jpg");
+  background-image: url("assets/campfire.jpg");
   background-size: 100vw 100vh;
 }
 
 #partyList {
-  background-image: url('https://img.freepik.com/free-photo/brown-papyrus-paper_53876-14519.jpg?w=996&t=st=1675679957~exp=1675680557~hmac=75bb08eac97affb72a085f4943b6ddac5e9527803746f39aadb86cd29731ae35');
-  width: 20%;
+  margin: 1em auto;
+  display: flexbox;
+  width: 40%;
+  background-image: url('assets/papyrus.jpg');
+  border-radius: 8px;
+  padding: 15px;
+}
+
+button {
+  margin: 0.5em;
+  padding: 0.75em 1em;
+  letter-spacing: 2px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: 2px solid #77490c;
+  border-radius: 6px;
+  background-color: #b67908;
+  background-image: linear-gradient(45deg, #77490c, #b67908);
+  box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, .5);
+  cursor: pointer;
+}
+
+.sameline {
+  display: inline;
 }
