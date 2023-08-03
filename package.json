@@ -4,7 +4,8 @@
   "description": "Encounter Randomizer",
   "main": "index.js",
   "scripts": {
-    "dev": "live-server ."
+    "dev": "live-server .",
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",
